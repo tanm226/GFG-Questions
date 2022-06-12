@@ -1,0 +1,49 @@
+// { Driver Code Starts
+// Initial template for C++
+
+#include <bits/stdc++.h>
+using namespace std;
+
+ // } Driver Code Ends
+// User function template for C++
+
+class Solution {
+  public:
+    int getMinDiff(int a[], int n, int k) {
+        sort(a,a+n);
+int diff = a[n-1] - a[0];            // max possible difference which is equal to 5 in test case 1
+
+        int smallest = a[0] +k; // test case 1 it is equal to 3
+        int largest = a[n-1] -k;// test case 1 it is equal to 8
+        
+        
+        int mini, maxi;
+        for(int i=0; i<n-1; i++){
+            mini = min(smallest, a[i+1]-k);   // min(3,3) after that min(3,2)
+            maxi = max(largest, a[i]+k);// max(8, )
+            if(mini<0) continue;
+            diff = min(diff, maxi-mini);
+        }
+        
+        return diff;
+    }
+};
+
+// { Driver Code Starts.
+int main() {
+    int t;
+    cin >> t;
+    while (t--) {
+        int n, k;
+        cin >> k;
+        cin >> n;
+        int arr[n];
+        for (int i = 0; i < n; i++) {
+            cin >> arr[i];
+        }
+        Solution ob;
+        auto ans = ob.getMinDiff(arr, n, k);
+        cout << ans << "\n";
+    }
+    return 0;
+}  // } Driver Code Ends
