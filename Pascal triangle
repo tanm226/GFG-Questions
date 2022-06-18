@@ -1,0 +1,32 @@
+
+#include <iostream>
+#include <math.h>
+
+using namespace std;
+int fac(int a){
+    
+    int fac = 1;
+    for(int i=2;i<=a;i++){
+        fac = fac*i;
+        
+    }
+    return fac;
+}
+
+int main()
+{
+    int n,i,j,ans;
+    cin>>n;
+    for(i=0;i<=n;i++){
+        for(j=0;j<=i;j++){
+            int ans = fac(i)/(fac(j)*fac(i-j));
+                cout<<ans<<" ";
+
+            
+        }
+    }
+    
+    
+
+    return 0;
+}
