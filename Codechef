@@ -1,0 +1,31 @@
+#include<bits/stdc++.h> // tanmay_singhal
+#include <cmath>
+#include<math.h>
+#include<iostream>
+using namespace std;
+int main()
+{
+	ios_base::sync_with_stdio(false);
+    cin.tie(NULL);
+	int t;
+	cin>>t;
+	while(t--)
+	{
+	int x,y,w=0,z=0,result=0;
+	cin>>x>>y;
+	if(x%10==0){
+	w = (x/10) ;}
+	else {
+	w = (x/10) +1;
+} 
+if(y%10==0){
+	z = (y/10) ;}
+	else {
+	z = (y/10) +1;
+} 
+	result = abs(w-z);
+	cout<<result<<endl;
+	}
+	return 0;
+	
+}
